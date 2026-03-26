@@ -1,0 +1,213 @@
+/* Importación de fuentes elegantes: Cinzel para títulos, Lora para lectura */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --bg-paper: #f4f1ea;        /* Color papel antiguo */
+    --ink-black: #1a1a1b;       /* Color tinta */
+    --gold-accent: #8e7341;     /* Color oro viejo */
+    --green-dark: #2d4628;      /* Verde bosque profundo */
+    --shadow-deep: 0 10px 30px rgba(0,0,0,0.08);
+    --border-soft: 1px solid rgba(0,0,0,0.1);
+}
+
+/* --- ESTILOS BASE --- */
+body {
+    background-color: var(--bg-paper);
+    color: var(--ink-black);
+    font-family: 'Lora', serif;
+    margin: 0;
+    line-height: 1.8;
+    text-align: justify; /* Estilo libro */
+}
+
+/* --- ENCABEZADO --- */
+header {
+    padding: 60px 20px 20px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ebe7de, var(--bg-paper));
+}
+
+.Titulo_principal {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: var(--green-dark);
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 3px double var(--gold-accent); /* Doble línea elegante */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* --- NAVEGACIÓN --- */
+.navbar {
+    margin-top: 30px;
+    border-top: var(--border-soft);
+    border-bottom: var(--border-soft);
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--ink-black);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: var(--gold-accent);
+}
+
+/* Efecto de línea inferior al pasar el mouse */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--gold-accent);
+    transition: 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* --- CONTENEDOR DE INTRODUCCIÓN (TEXTO Y VIDEO) --- */
+.contenedor-intro {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    box-shadow: var(--shadow-deep);
+    border: var(--border-soft);
+    overflow: hidden; /* Necesario para que el texto envuelva al video */
+}
+
+/* Letra Capital (La primera letra del texto más grande) */
+.texto-completo p:first-of-type::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    float: left;
+    margin-right: 10px;
+    line-height: 1;
+    color: var(--gold-accent);
+    font-weight: bold;
+}
+
+.video-caja {
+    float: right;            /* El video se pega a la derecha */
+    width: 45%;               /* Ocupa casi la mitad del ancho */
+    height: 280px;            /* Altura fija para el video */
+    background: #222;
+    margin-left: 30px;        /* Espacio para que el texto no pegue al video */
+    margin-bottom: 15px;      /* Espacio para que el texto fluya por debajo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-family: 'Cinzel', serif;
+    border: 4px double #444;  /* Borde decorativo para el video */
+}
+
+.texto-completo h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-accent);
+    font-size: 1.6rem;
+    margin-top: 0;
+    border-left: 4px solid var(--green-dark);
+    padding-left: 15px;
+}
+
+/* --- SECCIÓN DE AUDIOS --- */
+.seccion-audios {
+    max-width: 850px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.audio-item {
+    margin-bottom: 45px;
+}
+
+.reproductor {
+    background: var(--ink-black);
+    color: white;
+    padding: 25px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    position: relative;
+    box-shadow: 12px 12px 0px var(--gold-accent); /* Sombra sólida moderna */
+    clip-path: polygon(3% 0%, 100% 0%, 100% 100%, 3% 100%, 0% 50%); /* Punta de flecha */
+}
+
+/* Acordeón de Transcripción */
+details {
+    margin: 15px 0 0 30px;
+    background: white;
+    border: var(--border-soft);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.03);
+}
+
+summary {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--gold-accent);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-family: 'Cinzel', serif;
+    list-style: none;
+}
+
+summary::before {
+    content: '◈ '; /* Rombo decorativo */
+}
+
+.transcripcion-texto {
+    padding: 20px;
+    border-top: var(--border-soft);
+    font-style: italic;
+    background-color: #fafafa;
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+    background: var(--ink-black);
+    color: #888;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-top: 100px;
+}
+
+/* --- AJUSTE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .video-caja {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .Titulo_principal {
+        font-size: 1.8rem;
+    }
+}

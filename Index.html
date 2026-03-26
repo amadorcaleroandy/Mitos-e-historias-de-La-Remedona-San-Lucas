@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacienda Agroturística La Remedona - Reporte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --unan-red: #E31E24;
+            --unan-yellow: #F9D308;
+            --unan-blue: #005596;
+            --text-dark: #2c3e50;
+            --adobe-bg: #fdfaf6;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; background: #f4f7f6; margin: 0; }
+
+        /* HEADER */
+        .sticky-header { position: fixed; top: 0; width: 100%; background: white; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .flag-line { display: flex; height: 6px; }
+        .f-red { background: var(--unan-red); flex: 1; }
+        .f-yellow { background: var(--unan-yellow); flex: 1; }
+        .f-blue { background: var(--unan-blue); flex: 1; }
+        .header-content { padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+        .header-content h1 { font-size: 1rem; color: var(--unan-blue); margin: 0; text-transform: uppercase; }
+        
+        .nav-links { display: flex; gap: 15px; list-style: none; align-items: center; margin: 0; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: bold; font-size: 0.8rem; }
+        .btn-creadores { background: var(--unan-blue); color: white !important; padding: 8px 15px; border-radius: 20px; transition: 0.3s; }
+        .btn-creadores:hover { background: var(--unan-red); }
+
+        .container { max-width: 900px; margin: 110px auto 40px; background: white; padding: 50px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+
+        /* VIDEO */
+        .video-container { width: 100%; background: #000; margin: 30px 0; aspect-ratio: 16/9; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; border: 2px solid var(--unan-yellow); }
+        
+        /* SECCIONES */
+        h2 { color: var(--unan-blue); border-left: 5px solid var(--unan-yellow); padding-left: 15px; margin-top: 50px; }
+        .viewpoint-item { display: flex; background: var(--adobe-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; }
+        .location-pin { color: var(--unan-red); font-size: 1.5rem; margin-right: 15px; }
+
+        /* SECCIÓN DE MITOS */
+        .mitos-section { background: #fdf2f2; border-radius: 15px; padding: 30px; margin-top: 60px; border: 1px dashed var(--unan-red); }
+        .mito-card { background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; border-bottom: 4px solid var(--unan-red); }
+        .mito-card h3 { color: var(--unan-red); margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        .mito-narracion { font-style: italic; color: #555; border-left: 3px solid #ddd; padding-left: 15px; }
+
+        footer { background: var(--text-dark); color: white; padding: 40px; text-align: center; margin-top: 50px; }
+        .footer-logos img { height: 60px; filter: brightness(0) invert(1); margin: 0 15px; opacity: 0.8; }
+
+        @media (max-width: 600px) { .container { padding: 20px; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav class="sticky-header">
+        <div class="flag-line"><div class="f-red"></div><div class="f-yellow"></div><div class="f-blue"></div></div>
+        <div class="header-content">
+            <h1>La Remedona - Reporte</h1>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cabana">La Cabaña</a></li>
+                <li><a href="#geositio">Geositio</a></li>
+                <li><a href="#mitos">Mitos</a></li>
+                <li><a href="creadores.html" class="btn-creadores"><i class="fa-solid fa-users"></i> Equipo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="inicio">
+            <h1 style="text-align: center; color: var(--unan-blue); margin-bottom: 30px;">Hacienda Agroturística</h1>
+            <p>La Remedona, ubicada en la comunidad La Manzana del municipio de San Lucas, Madriz, es un lugar majestuoso que trae a memoria las historias que nuestros abuelitos y padres nos han contado en alguna ocasión. Este hermoso lugar nos conecta con nuestras raíces, nuestra cultura, nuestras tradiciones y departamento.</p>
+            
+            <p>Somos estudiantes de la carrera de <strong>Administración de Empresas (3er año 2026) en la Universidad Nacional Autónoma de Nicaragua (UNAN-León, CUR-Somoto)</strong> y con este mini-proyecto nos sentimos tan afortunados de poder abordar tan valioso tema que hoy en día se habla poco y que incluso muchos jóvenes desconocen: Los aspectos culturales.</p>
+            
+            <p>Hablar de la cultura local para muchos es locura, mas nosotros aprendimos que vale la pena sentarse a escuchar historias, caminar por la naturaleza viendo las columnas de muchos mitos y también poder recordar como nuestros antepasados lograron sobrevivir inventando sus propias herramientas.</p>
+        </div>
+
+        <div class="video-container" id="video">
+            <i class="fa-solid fa-play-circle fa-3x" style="color: var(--unan-yellow); margin-bottom: 10px;"></i>
+            <p>Espacio reservado para el video del recorrido</p>
+        </div>
+
+        <section id="cabana">
+            <h2>1. La cabaña</h2>
+            <p>Es una casa con un diseño de arquitectura antigua, es una casa echa de adobe y con un techo de tejas; este es el punto de partida (a nuestra consideración) hacia los distintos sitios. Lo que hace más especial este punto especifico son las imágenes en las paredes, allí está la historia plasmada con materiales de nuestra naturaleza...</p>
+            <p style="padding-left: 20px; background: #f9f9f9; border-radius: 8px; padding: 15px;">
+                <strong>a. Herramientas para movilización de insumos:</strong> Cojines para movilizar agua, bombas de fumigar, surrón.<br>
+                <strong>b. Herramientas transformación de materias:</strong> Piedras de moler, maquina de moler, salero de piedra, creador de queso.<br>
+                <strong>c. Herramientas de albañilería:</strong> Barreno, cepillo de madera.<br>
+                <strong>d. Herramientas para la agricultura:</strong> Montura para caballos, yugos para bueyes, medidor de granos básicos de madera.
+            </p>
+        </section>
+
+        <section id="geositio">
+            <h2>2. El geositio La Remedona</h2>
+            <p>Es un cerro que su altura máxima alcanza los 847 pies sobre el nivel del mar, nos comentaba <strong>Dagoberto Laínez</strong>, uno de la guía turística que en este cerro se puede ver hacia los cuatro puntos cardinales...</p>
+
+            <div class="viewpoint-item">
+                <i class="fa-solid fa-location-dot location-pin"></i>
+                <div>
+                    <h4>a. Mirador el Albarreal</h4>
+                    <p>Desde aquí puedes ver hacia los terrenos donde siembran, se llama Albarreal porque el tipo de tierra es barro y, por ende, buena para sembrar granos básicos.</p>
+                </div>
+            </div>
+
+            <div class="viewpoint-item">
+                <i class="fa-solid fa-location-dot location-pin"></i>
+                <div>
+                    <h4>b. Mirador a La Manzana</h4>
+                    <p>En este sitio se puede visualizar toda la comunidad de La Manzana, cuando logras ver desde ese punto todo parece como una fotografía panorámica.</p>
+                </div>
+            </div>
+
+            <div class="viewpoint-item">
+                <i class="fa-solid fa-location-dot location-pin"></i>
+                <div>
+                    <h4>c. Mirador hacia Los Canales</h4>
+                    <p>Al seguir con el recorrido llegas a este otro mirador y desde ahí lograrás ver toda la comunidad de Los Canales.</p>
+                </div>
+            </div>
+
+            <div class="viewpoint-item">
+                <i class="fa-solid fa-location-dot location-pin"></i>
+                <div>
+                    <h4>d. Mirador La Patasta</h4>
+                    <p>Este otro mirador es hacia la montaña conocida como La Patasta, otro lugar que contiene mitos de nuestra región.</p>
+                </div>
+            </div>
+
+            <div class="viewpoint-item">
+                <i class="fa-solid fa-location-dot location-pin"></i>
+                <div>
+                    <h4>e. Mirador al Zapotillo</h4>
+                    <p>También conocido como mirador El Gigante, este mirador es en una roca gigante y desde ese punto se logra apreciar la comunidad de Zapotillo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mitos" class="mitos-section">
+            <h2 style="border-left-color: var(--unan-red); margin-top: 0;">Mitos e Historia de la Zona</h2>
+            <p>A continuación, presentamos los relatos y leyendas que Dagoberto y la comunidad han compartido con nosotros:</p>
+
+            <div class="mito-card">
+                <h3><i class="fa-solid fa-cow"></i> El ganado de medianoche</h3>
+                <p class="mito-narracion">Al pasar por el geositio en la noche han visto ganado blanco (vacas), grandes en cantidad; este ganado no es el de la finca, sino que se podría decir que es algo NO NATURAL.</p>
+            </div>
+
+            <div class="mito-card">
+                <h3><i class="fa-solid fa-mountain"></i> La cueva</h3>
+                <p class="mito-narracion">Se dice que la cueva de La Remedona es el portal para nuestro país vecino Honduras. De igual manera se dice que la cueva unos la ven profunda y otros no. Según ancianos hace 600 años aproximadamente vivieron tribus indigenas ahí en La Cueva por los restos encontrados. Los ancionos dicen que en la cueva unos metros al norte hubo un cementerio y que muchos (turistas o nacionales) han sentido malas vibras.</p>
+            </div>
+
+            <div class="mito-card">
+                <h3><i class="fa-solid fa-moon"></i> La luz de 6-7 pm</h3>
+                <p class="mito-narracion">Se dice que antes salía una luz entre las 6 de la tarde a las 7 todos los días, las personas creen que hubo un valiente que se tomó la tarea de ver donde nacía la luz (se decía que salía del cerro), hoy en día las personas locales dicen que en las visitas a La Remedona encontraron un lugar donde hay un hueco con restos de cosas y un cántaro quebrado. Ellos creen que era un tesoro el que había, mas después de el día que el valiente -anteriormente mencionado- encontró lo que había, la luz no volvió a salir.</p>
+            </div>
+
+            <div class="mito-card">
+                <h3><i class="fa-solid fa-feather-pointed"></i> Historia de los Antepasados</h3>
+                <p class="mito-narracion">Nuestros antepasados no tenían automoviles, molinos de motor y otras cosas que hoy en día se ven; lo increíble es las herramientas que ellos tenían y cabe destacar que estas herramientas eran elaboradas por ellos mismos.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-logos">
+            <img src="logo-unan.png" alt="UNAN">
+            <img src="logo-cur.png" alt="CUR">
+        </div>
+        <p><strong>UNAN-León | CUR-Somoto</strong><br>Administración de Empresas - 3er Año (2026)</p>
+    </footer>
+
+</body>
+</html>
