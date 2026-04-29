@@ -42,10 +42,13 @@
     .viewpoint-item { display: flex; flex-direction: column; background: var(--adobe-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; }
     .location-pin { color: var(--unan-red); font-size: 1.5rem; margin-right: 15px; margin-top: 5px; }
 
-    /* IMÁGENES NUEVAS */
-    .img-doc { width: 100%; border-radius: 10px; margin: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .galeria-equipo { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    /* IMÁGENES */
+    .img-doc { width: 100%; height: auto; border-radius: 10px; margin: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    
+    /* GALERÍA RESPONSIVA */
+    .galeria-equipo { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
     .galeria-equipo div { text-align: center; font-size: 0.8rem; color: #666; }
+    .img-mujer { height: 400px; width: 300px; object-fit: cover; }
 
     /* SECCIÓN DE MITOS */
     .mitos-section { background: #fdf2f2; border-radius: 15px; padding: 30px; margin-top: 60px; border: 1px dashed var(--unan-red); }
@@ -53,7 +56,9 @@
     .mito-card h3 { color: var(--unan-red); margin-top: 0; display: flex; align-items: center; gap: 10px; }
     .mito-narracion { font-style: italic; color: #555; border-left: 3px solid #ddd; padding-left: 15px; }
 
-    .tabla-comparativa { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    /* TABLA RESPONSIVA */
+    .tabla-container { width: 100%; overflow-x: auto; margin: 25px 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .tabla-comparativa { width: 100%; border-collapse: collapse; min-width: 600px; font-size: 0.9rem; background: white; }
     .tabla-comparativa th { background-color: var(--unan-blue); color: white; padding: 12px; text-align: left; text-transform: uppercase; }
     .tabla-comparativa td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: top; }
     .col-antes { font-weight: bold; color: var(--unan-red); }
@@ -68,6 +73,7 @@
         .header-content h1 { font-size: 0.85rem; margin-bottom: 10px; text-align: center; }
         .nav-links { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .container { padding: 20px; margin-top: 140px; }
+        .img-mujer { height: auto; width: 100%; }
     }
 </style>
 </head>
@@ -130,8 +136,8 @@
                     <p>Integrantes con el guía Dagoberto Laínez</p>
                 </div>
                 <div>
-                    <img src="imagen3.jpg" alt="Piedra con forma de mujer" class="img-doc" style="height: 400px; width: 300px;">
-                    <p>IPiedra con forma de mujer</p>
+                    <img src="imagen3.jpg" alt="Piedra con forma de mujer" class="img-doc img-mujer">
+                    <p>Piedra con forma de mujer</p>
                 </div>    
             </div>
         </section>
@@ -149,7 +155,7 @@
                     <i class="fa-solid fa-location-dot location-pin"></i>
                     <h4>a. Mirador al Barrial</h4>
                 </div>
-                <p>Desde aquí puedes ver hacia los terrenos donde siembran, se llama Albarreal porque el tipo de tierra es barro y, por ende, buena para sembrar granos básicos.</p>
+                <p>Desde aquí puedes ver hacia los terrenos donde siembran, su nombre se debe al tipo de tierra, que es barro y, por ende, buena para sembrar granos básicos.</p>
             </div>
 
             <div class="viewpoint-item">
@@ -233,47 +239,49 @@
                 <p class="mito-narracion">Nuestros antepasados no tenían automoviles, molinos de motor y otras cosas que hoy en día se ven; lo increíble es que las herramientas que ellos usaban eran distintas, pero completamente funcionales:</p>
             </div>
 
-            <table class="tabla-comparativa">
-                <thead>
-                    <tr>
-                        <th>Herramienta Antigua</th>
-                        <th>Equivalente Moderno</th>
-                        <th>Objetivo / Diferencia Cultural</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-antes">Carreta</td>
-                        <td class="col-ahora">Camiones / Pick-ups</td>
-                        <td>Transportar granos básicos. La diferencia radica en que las carretas no tenían motor y se movían por la fuerza de bueyes.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-antes">Cepillo de madera</td>
-                        <td class="col-ahora">Garlopa Eléctrica</td>
-                        <td>Alisar, nivelar y suavizar superficies de madera, eliminando imperfecciones para crear muebles.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-antes">Cántaro de barro</td>
-                        <td class="col-ahora">Filtro / Purificador</td>
-                        <td>Almacenar agua. Mantienen el agua segura; tanto el cántaro como el filtro moderno contienen tapaderas para higiene.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-antes">Barreno</td>
-                        <td class="col-ahora">Taladro Eléctrico</td>
-                        <td>Ideales para hacer huecos precisos en la madera de forma manual o mecánica.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-antes">Arado</td>
-                        <td class="col-ahora">Tractor con Arado de Discos</td>
-                        <td>Excavar la tierra para la siembra haciendo surcos. El arado tradicional depende de una yunta de bueyes y la dirección del hombre.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-antes">Piedra de moler</td>
-                        <td class="col-ahora">Molino Eléctrico</td>
-                        <td>Moler el maíz para hacer tortillas. Antes, esta labor recaía totalmente en el esfuerzo físico de las mujeres usando piedras.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tabla-container">
+                <table class="tabla-comparativa">
+                    <thead>
+                        <tr>
+                            <th>Herramienta Antigua</th>
+                            <th>Equivalente Moderno</th>
+                            <th>Objetivo / Diferencia Cultural</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-antes">Carreta</td>
+                            <td class="col-ahora">Camiones / Pick-ups</td>
+                            <td>Transportar granos básicos. La diferencia radica en que las carretas no tenían motor y se movían por la fuerza de bueyes.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-antes">Cepillo de madera</td>
+                            <td class="col-ahora">Garlopa Eléctrica</td>
+                            <td>Alisar, nivelar y suavizar superficies de madera, eliminando imperfecciones para crear muebles.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-antes">Cántaro de barro</td>
+                            <td class="col-ahora">Filtro / Purificador</td>
+                            <td>Almacenar agua. Mantienen el agua segura; tanto el cántaro como el filtro moderno contienen tapaderas para higiene.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-antes">Barreno</td>
+                            <td class="col-ahora">Taladro Eléctrico</td>
+                            <td>Ideales para hacer huecos precisos en la madera de forma manual o mecánica.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-antes">Arado</td>
+                            <td class="col-ahora">Tractor con Arado de Discos</td>
+                            <td>Excavar la tierra para la siembra haciendo surcos. El arado tradicional depende de una yunta de bueyes y la dirección del hombre.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-antes">Piedra de moler</td>
+                            <td class="col-ahora">Molino Eléctrico</td>
+                            <td>Moler el maíz para hacer tortillas. Antes, esta labor recaía totalmente en el esfuerzo físico de las mujeres usando piedras.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </div>
 
