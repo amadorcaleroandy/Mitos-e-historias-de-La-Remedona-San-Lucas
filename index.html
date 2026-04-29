@@ -34,12 +34,18 @@
     .container { max-width: 900px; margin: 110px auto 40px; background: white; padding: 50px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
 
     /* VIDEO */
-    .video-container { width: 100%; background: #000; margin: 30px 0; aspect-ratio: 16/9; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; border: 2px solid var(--unan-yellow); }
+    .video-container { width: 100%; background: #000; margin: 30px 0; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; border: 2px solid var(--unan-yellow); }
+    video { width: 100%; height: 100%; object-fit: contain; }
     
     /* SECCIONES */
     h2 { color: var(--unan-blue); border-left: 5px solid var(--unan-yellow); padding-left: 15px; margin-top: 50px; }
-    .viewpoint-item { display: flex; background: var(--adobe-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; }
-    .location-pin { color: var(--unan-red); font-size: 1.5rem; margin-right: 15px; }
+    .viewpoint-item { display: flex; flex-direction: column; background: var(--adobe-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; }
+    .location-pin { color: var(--unan-red); font-size: 1.5rem; margin-right: 15px; margin-top: 5px; }
+
+    /* IMÁGENES NUEVAS */
+    .img-doc { width: 100%; border-radius: 10px; margin: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .galeria-equipo { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    .galeria-equipo div { text-align: center; font-size: 0.8rem; color: #666; }
 
     /* SECCIÓN DE MITOS */
     .mitos-section { background: #fdf2f2; border-radius: 15px; padding: 30px; margin-top: 60px; border: 1px dashed var(--unan-red); }
@@ -47,29 +53,21 @@
     .mito-card h3 { color: var(--unan-red); margin-top: 0; display: flex; align-items: center; gap: 10px; }
     .mito-narracion { font-style: italic; color: #555; border-left: 3px solid #ddd; padding-left: 15px; }
 
+    .tabla-comparativa { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .tabla-comparativa th { background-color: var(--unan-blue); color: white; padding: 12px; text-align: left; text-transform: uppercase; }
+    .tabla-comparativa td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+    .col-antes { font-weight: bold; color: var(--unan-red); }
+    .col-ahora { font-weight: bold; color: #2d4628; }
+
     footer { background: var(--text-dark); color: white; padding: 40px; text-align: center; margin-top: 50px; }
     .footer-logos { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 15px; }
     .footer-logos img { height: 50px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
 
-    /* --- AJUSTES PARA CELULARES --- */
     @media (max-width: 600px) { 
         .header-content { flex-direction: column; padding: 15px 10px; }
         .header-content h1 { font-size: 0.85rem; margin-bottom: 10px; text-align: center; }
-        
-        /* Menú visible y acomodado */
-        .nav-links { 
-            display: flex !important; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 10px; 
-        }
-        .nav-links a { font-size: 0.7rem; }
-        .btn-creadores { padding: 6px 12px; font-size: 0.7rem; }
-
-        .container { padding: 20px; margin-top: 140px; } /* Más espacio arriba para que el menú no tape el contenido */
-
-        /* Evitar que los logos crezcan en móvil */
-        .footer-logos img { height: 40px; } 
+        .nav-links { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .container { padding: 20px; margin-top: 140px; }
     }
 </style>
 </head>
@@ -100,13 +98,18 @@
         </div>
 
         <div class="video-container" id="video">
-            <i class="fa-solid fa-play-circle fa-3x" style="color: var(--unan-yellow); margin-bottom: 10px;"></i>
-            <p>Espacio reservado para el video del recorrido</p>
+            <video controls>
+                <source src="recorrido_remedona.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
         </div>
 
         <section id="cabana">
             <h2>1. La cabaña</h2>
             <p>Es una casa con un diseño de arquitectura antigua, es una casa echa de adobe y con un techo de tejas; este es el punto de partida (a nuestra consideración) hacia los distintos sitios. Lo que hace más especial este punto especifico son las imágenes en las paredes, allí está la historia plasmada con materiales de nuestra naturaleza...</p>
+            
+            <img src="imagen1.jpg" alt="Pinturas de tierra en la pared" class="img-doc">
+
             <p style="padding-left: 20px; background: #f9f9f9; border-radius: 8px; padding: 15px;">
                 <strong>a. Herramientas para movilización de insumos:</strong> Cojines para movilizar agua, bombas de fumigar, surrón.<br>
                 <strong>b. Herramientas transformación de materias:</strong> Piedras de moler, maquina de moler, salero de piedra, creador de queso.<br>
@@ -115,48 +118,94 @@
             </p>
         </section>
 
+        <section id="evidencia">
+            <h2>Evidencia de campo</h2>
+            <div class="galeria-equipo">
+                <div>
+                    <img src="imagen5.jpg" alt="Integrantes del grupo" class="img-doc">
+                    <p>Integrantes del grupo en recorrido</p>
+                </div>
+                <div>
+                    <img src="imagen2.jpg" alt="Integrantes con Dagoberto" class="img-doc">
+                    <p>Integrantes con el guía Dagoberto Laínez</p>
+                </div>
+                <div>
+                    <img src="imagen3.jpg" alt="Piedra con forma de mujer" class="img-doc" style="height: 400px; width: 300px;">
+                    <p>IPiedra con forma de mujer</p>
+                </div>    
+            </div>
+        </section>
+
         <section id="geositio">
             <h2>2. El geositio La Remedona</h2>
-            <p>Es un cerro que su altura máxima alcanza los 847 pies sobre el nivel del mar, nos comentaba <strong>Dagoberto Laínez</strong>, uno de la guía turística que en este cerro se puede ver hacia los cuatro puntos cardinales...</p>
+            <p>Es un cerro que su altura máxima alcanza los 847 pies sobre el nivel del mar, nos comentaba <strong>Dagoberto Laínez</strong>, uno de la guía turística que en este cerro se puede ver hacia los cuatro puntos cardinales y efectivamente, cuando llegamos a la cima logramos confirmar esto; </p>
+            
+            <img src="imagen4.jpg" alt="Vista panorámica desde el mirador" class="img-doc">
 
+            <p>A continuación detallamos los distintos miradores de La Remedona:</p>
+            
             <div class="viewpoint-item">
-                <i class="fa-solid fa-location-dot location-pin"></i>
-                <div>
-                    <h4>a. Mirador el Albarreal</h4>
-                    <p>Desde aquí puedes ver hacia los terrenos donde siembran, se llama Albarreal porque el tipo de tierra es barro y, por ende, buena para sembrar granos básicos.</p>
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
+                    <h4>a. Mirador al Barrial</h4>
                 </div>
+                <p>Desde aquí puedes ver hacia los terrenos donde siembran, se llama Albarreal porque el tipo de tierra es barro y, por ende, buena para sembrar granos básicos.</p>
             </div>
 
             <div class="viewpoint-item">
-                <i class="fa-solid fa-location-dot location-pin"></i>
-                <div>
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
                     <h4>b. Mirador a La Manzana</h4>
-                    <p>En este sitio se puede visualizar toda la comunidad de La Manzana, cuando logras ver desde ese punto todo parece como una fotografía panorámica.</p>
                 </div>
+                <p>En este sitio se puede visualizar toda la comunidad de La Manzana, cuando logras ver desde ese punto todo parece como una fotografía panorámica.</p>
             </div>
 
             <div class="viewpoint-item">
-                <i class="fa-solid fa-location-dot location-pin"></i>
-                <div>
-                    <h4>c. Mirador hacia Los Canales</h4>
-                    <p>Al seguir con el recorrido llegas a este otro mirador y desde ahí lograrás ver toda la comunidad de Los Canales.</p>
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
+                    <h4>c. Mirador hacia San Lucas</h4>
                 </div>
+                <p>Al seguir con el recorrido llegas a este otro mirador y desde ahí lograrás ver toda el hermoso pueblo de San Lucas.</p>
             </div>
 
             <div class="viewpoint-item">
-                <i class="fa-solid fa-location-dot location-pin"></i>
-                <div>
-                    <h4>d. Mirador La Patasta</h4>
-                    <p>Este otro mirador es hacia la montaña conocida como La Patasta, otro lugar que contiene mitos de nuestra región.</p>
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
+                    <h4>d. Mirador Guacamoya</h4>
                 </div>
+                <p>Siguiendo el sendero llegaras a este otro mirador. En este mirador se mira la comunidad de Zapotillo, perteneciente a San Lucas.</p>
             </div>
 
             <div class="viewpoint-item">
-                <i class="fa-solid fa-location-dot location-pin"></i>
-                <div>
-                    <h4>e. Mirador al Zapotillo</h4>
-                    <p>También conocido como mirador El Gigante, este mirador es en una roca gigante y desde ese punto se logra apreciar la comunidad de Zapotillo.</p>
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
+                    <h4>e. Mirador a Somoto</h4>
                 </div>
+                <p>Continuando el recorrido encontrarás el otro mirador que es hacia Somoto.</p>
+            </div>
+
+            <div class="viewpoint-item">
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
+                    <h4>f. Mirador El Quebracho</h4>
+                </div>
+                <p>Este mirador se llama así porque justo en ese punto hay varios árboles de Quebracho y de igual manera de aquí se contempla a lo lejos El Espino (zona fronteriza)</p>
+            </div> 
+
+            <div class="viewpoint-item">
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
+                    <h4>g. Mirador al Zapotillo</h4>
+                </div>
+                <p>También conocido como mirador El Gigante, este mirador es en una roca gigante y desde ese punto se logra apreciar la comunidad de Zapotillo </p>
+            </div>
+
+            <div class="viewpoint-item">
+                <div style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot location-pin"></i>
+                    <h4>h. Mirador al junco</h4>
+                </div>
+                <p>Este termina siendo el último mirador que visitamos y como su nombre lo dice, desde ahí se puede ver El Junco</p>
             </div>
         </section>
 
@@ -181,8 +230,50 @@
 
             <div class="mito-card">
                 <h3><i class="fa-solid fa-feather-pointed"></i> Historia de los Antepasados</h3>
-                <p class="mito-narracion">Nuestros antepasados no tenían automoviles, molinos de motor y otras cosas que hoy en día se ven; lo increíble es las herramientas que ellos tenían y cabe destacar que estas herramientas eran elaboradas por ellos mismos.</p>
+                <p class="mito-narracion">Nuestros antepasados no tenían automoviles, molinos de motor y otras cosas que hoy en día se ven; lo increíble es que las herramientas que ellos usaban eran distintas, pero completamente funcionales:</p>
             </div>
+
+            <table class="tabla-comparativa">
+                <thead>
+                    <tr>
+                        <th>Herramienta Antigua</th>
+                        <th>Equivalente Moderno</th>
+                        <th>Objetivo / Diferencia Cultural</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-antes">Carreta</td>
+                        <td class="col-ahora">Camiones / Pick-ups</td>
+                        <td>Transportar granos básicos. La diferencia radica en que las carretas no tenían motor y se movían por la fuerza de bueyes.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-antes">Cepillo de madera</td>
+                        <td class="col-ahora">Garlopa Eléctrica</td>
+                        <td>Alisar, nivelar y suavizar superficies de madera, eliminando imperfecciones para crear muebles.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-antes">Cántaro de barro</td>
+                        <td class="col-ahora">Filtro / Purificador</td>
+                        <td>Almacenar agua. Mantienen el agua segura; tanto el cántaro como el filtro moderno contienen tapaderas para higiene.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-antes">Barreno</td>
+                        <td class="col-ahora">Taladro Eléctrico</td>
+                        <td>Ideales para hacer huecos precisos en la madera de forma manual o mecánica.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-antes">Arado</td>
+                        <td class="col-ahora">Tractor con Arado de Discos</td>
+                        <td>Excavar la tierra para la siembra haciendo surcos. El arado tradicional depende de una yunta de bueyes y la dirección del hombre.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-antes">Piedra de moler</td>
+                        <td class="col-ahora">Molino Eléctrico</td>
+                        <td>Moler el maíz para hacer tortillas. Antes, esta labor recaía totalmente en el esfuerzo físico de las mujeres usando piedras.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </div>
 
